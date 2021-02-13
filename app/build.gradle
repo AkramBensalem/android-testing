@@ -21,12 +21,25 @@ android {
         }
     }
 
+
     //dataBinding {
     //    enabled = true
     //    enabledForTests = true
     //}
     buildFeatures {
         dataBinding true
+    }
+
+    // Configure only for each module that uses Java 8
+    // language features (either in its source code or
+    // through dependencies).
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // For Kotlin projects
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
